@@ -56,9 +56,9 @@ app.use(express.json());
 // IMPORTANT: Create a GitLab application in your GitLab settings > Applications.
 // - Scopes: select `api`, `read_user`, `read_repository`.
 // - Redirect URI: Must match this server's callback URL (e.g., http://localhost:3000/auth/gitlab/callback)
-const GITLAB_CLIENT_ID ="96f189a6d2a84c41c2ed29af420d8adbe720aabfb9ba55591b712c72c59988ea";
-const GITLAB_CLIENT_SECRET = "gloas-816d32afbf4c575a23036cd15d5cf7357ae395861379c31f375b59109b813bc9";
-const REDIRECT_URI = 'https://servertmigitlab.onrender.com/auth/gitlab/callback';
+const GITLAB_CLIENT_ID = "714ce09dcc4ced803f1d30e8005e3843cfc1351a7d0e73e20440151dbdb85d4a";
+const GITLAB_CLIENT_SECRET = "gloas-977a6922ef7b3321db2b7eca54fe0814ba6aa4597ca6ae043d7e9ba4980bcad5";
+const REDIRECT_URI = process.env.GITLAB_CALLBACK_URL || 'http://localhost:3000/auth/gitlab/callback';
 const GITLAB_BASE_URL = 'https://gitlab.com';
 const FALLBACK_FRONTEND_URL = 'https://tmiisikefeya.vercel.app';
 
