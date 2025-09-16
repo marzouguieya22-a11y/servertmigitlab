@@ -38,6 +38,7 @@ try {
 
 admin.initializeApp({
   credential: serviceAccount ? admin.credential.cert(serviceAccount) : admin.credential.applicationDefault(),
+  projectId: 'chaima-4aed2',
 });
 
 const db = admin.firestore();
