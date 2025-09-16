@@ -15,12 +15,12 @@ const admin = require('firebase-admin');
 // in an environment variable (e.g., FIREBASE_SERVICE_ACCOUNT_BASE64).
 let serviceAccount;
 try {
-  if (true) {
+ 
     serviceAccount = {
   "type": "service_account",
   "project_id": "chaima-4aed2",
-  "private_key_id": "298b61dbe9ceff02b7521406032ad66cbe820c5d",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC26rYsG4/dyuWx\n+CaU6eZ4xl+Im4JtPc7jmcKsJYp/WQK2GBGx0nm+DbVtWc1bp9ySyhZ799+NvC6q\n7xXq8bvrBTe1CEZXtlydAqjgrjlj9jweRaeIe5aYMqaLIYZjsWbTc0/xgkgPRQTi\nuwq/GEGeVX6c0oS6CzTHN3u7kyqrAk2v8GHziu9s/V/gv155kIL8df12Spxif+Li\nLYziIZLGFSQktMsORAD/J+QDBkV6t3YNoykbhOgTGZC78AKjqNs8i+mfBxTRvEUM\n9xTzzaG4bdEk2UDLYECL6ZlaesGwvSEjTRHVdZaOCku59LlCVeuK6obkrgZcz36r\nfd9gjijlAgMBAAECggEAASIxPEB0njdl0nD0P68lHKPs71o4gWo77doD8h4FcP1z\ny9lherEQOhST9EFjNyBWwb4fudU8IZMo1SoRSWtO8q4NvZx3X7QRLyYypEwZQGEx\n15x4UuRZLiP+yadfGtYzUxNIlNUAAHcUmtA+yPJi0knyNH7g62fzzRDTrDBXuBBu\nw+gRxI5msQmYIp0Qi/iCmVodAu24cgXviwwaPbeD7/m0nkmCBJFYGBUbKlpTKm62\nnT1gGWQ3Iuf0B9ZvmpHlIlP0Ka2jSjaST8Oa/TMWhFTvKMBtc48YVsCN91H73Z6p\njdWghIhu0FGMiPSpgT6iStyQNMelAL5M4kUzr6Ok4QKBgQDZXB9tZN0xPgq4jQSG\nhPW0qaxadaXq88ZAn8K+9mLI1oG2rP5FTvos/l6AvVOshELWBwd3k5So7EfwNHud\n231qDFjSTdZ3RE285cDdFUunyqezEsWZqgE1KsrIF0LwLSGlSXpMWHbFbAgQbF2E\nOtvuvWNTPB/U86r/Q0G1VlmX3QKBgQDXbx0/zSdrJ6dyVth1JyyuWp9yQufmz6Tt\nMC5hzL4yQnaCRdaRC5lfH/8UMWYAfPhVIyjC93ynzFtBwLMlvwfhbL62etOeRtVN\nrppTGInmH9M5jW4FU6HsOtP8p0pXNjIFTsTFv2PmXDhC6LSKuLBlkujExqKAC9ga\njnNMt7IIqQKBgQDGpcnXGYKJuXDk34ROSH+iABuThMgBJY9/ikLacaUwddKQmCO+\nRgKgUk0eDWnGVg4bOstZPlhz1ZWdcumzCGDjJaubcCXcVGFTjQqpQwgkrjJ7l2Fe\nIZ/+7j/rhE7Z3/VK8Q9DbOoHXcc080S4T26nDxEShfV1ksgpiFcqGmPBRQKBgQDL\n86mhKTvUOipQGN+7qWaneavRpH2fCZ1930tJ02eMdVd0ZWGI145PfB8kos+KTsVa\n9Ho2ec5NnS4XxbLUXVG8nBLA9u84vJ5beJ0pZeXHMwHpTneGG3MEDX17h3Tds7UP\nSU8IVvTgtRWeYmfpnIeC4d3zzIky6AOiwJFvY8jsYQKBgDXBjIWtlJbB6Tq45bIF\nNp18QzRqgtBtaXzD/Mt7ViV2LLPTF3Phb65aP/UBdu2wMFF6nUW9KC6VE7YaWig2\ny7ra6Y1BlrL6wwdXNS0/0iIiFn25yZ8ys2PcHGUvIkorywAsIoY7iWkVoRpmv+Ld\nggK4sdyR8emikDRjRcyj9mIM\n-----END PRIVATE KEY-----\n",
+  "private_key_id": "189e9bfa0022f12b573d571d9f5b2c9569894d87",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDkYES6XqEU4cjm\nrlZgpo/GsLVMM++T/nM+6ic57W+u92CmPFG3ecgqN+M1vqtwFm6tUTNQPEWOdJRa\nHC8A/mlqcsck81f/ri6b9nqc6TqDQx0RVPrfwLgBVqNg9VyWFWd7oSgp2MI8yxOH\nkjmJdSHAenXJHFjPjgwfwTQvK1uAeIigQHudBOEE4HFdPM5lrNMjqlJ/yFaXJkAU\nEz2/r74i5AXV+dx8e/q4tjwOEIIOibQswJuRtNdU2Ifsqj1nMqWlwxGMSw+Obn/B\n3lPD3oThBreALdLXian22a2fgQOgue+3EW3H8v61lQYvqDVpSihXFnbcPnjvgUlk\nl8K++BWjAgMBAAECggEAFI19YfBmOsTfGbOS3nve8JiymDsMUptRr9XO1e3CYVKu\nBgfjqslw9Cu3bPzN3PaH2101awEhmWJwf3ON318GCahut6qWvtHkK/EQs9Jhi7Kc\niRTGxyBG7wfnCDDMtk0S1RN509pIEMSN62ODfhVmhjX/J6w/ad50xN7UXXJfd741\ntKHxEFC45kaay8ulH8BSt1USGM5JxEb/zuG4e2Q2fs9Macotkj/1y80iJImVvh6k\nda1CfDF1UylGKfoNauJWC0SOG79kZvCg9PToGBxFEsVtMFnwfyt4BsJBqliXj4y9\npB7DcQz/PgzYg9YYGuuRTUCWva2TmvmXDEHL+l1BwQKBgQD36tzR976r6JSGUQvr\nkP3PX9IZlJTobmcSimna6VkREwTKG5PC1Cwskh9ZLbmrtUUOzDZb1APUXrCWFuFi\ngSmgOudWhcjNoPuXRIz5Y1ZY2zZAX+F4ylfwF35Mtsg1H18rPSTY983T/PzLXMzC\nYTypDNZe1q3DuoYc2rCM6vjwMQKBgQDr0k/iJayW5quJBdWyVKoL2myalZcmK33O\nkuJGDiBs3Z5VdpNEyHORkX9zQQ5tJh7yGjyid3chfdAJTlpflsoLVm6jfK17YXfG\nIZEGebDVhANWUmzIE8sQ2GZiiEQNb4utFlYpARYi3OCEaH1Z0BM3jNZyjVImS5Yg\nkM+sv+PiEwKBgG24z2RKHmQc+mb7xafLMtmt0eGqZcD847dL9Q+CyP2Kikscq2fF\n2YscXK1uVEdPYbHr5X78tXkvMz4qADRFb/PPPgWIDlgbkF3hY/cX5OZMlpUlGjgI\nbaT/8NDo8HC6YrdTR1STT9ArnoIunxzERkGXQeUVZDBFBAgPLaYgdG5xAoGAF7Dx\nRY7zX9Wctg9YAKpwyvAOqRkOLk+APBiVkuQobcd1+LAI64gX1DAB1dpbUKvbwAbS\nwJ+v4DV7iPPOMHw9oBX214XXB+Yq2kTVBQmEsm6oxytQsmkKpY6X+p4l+BOUvLbZ\nwRTS3H3EMIkuzq8Qvyvu/2MjNaWyV2M0+e3tPvECgYAYNPwb/rihB2yZ1PbObC6W\nla4TliQYumhyWoNmaWJlXYIycPjisugq+6uHwAKeZBbr3CWBP2Vk4mFYtyUf9E1N\nbDYiGjn5fxaboRKDon8gcQfYwUeFqoQRxy9Q//lXOdi5HvjeqxQM3o+Kw1N+b7e0\nLG2ITV7+CZ5NAyGgeAYJ+g==\n-----END PRIVATE KEY-----\n",
   "client_email": "firebase-adminsdk-kgo8y@chaima-4aed2.iam.gserviceaccount.com",
   "client_id": "116884836716058144352",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
@@ -30,12 +30,7 @@ try {
   "universe_domain": "googleapis.com"
 }
 ;
-  } else if (process.env.FIREBASE_SERVICE_ACCOUNT) {
-    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-  } else {
-    // This will use GOOGLE_APPLICATION_CREDENTIALS env var by default
-    console.log('Initializing Firebase Admin with Application Default Credentials.');
-  }
+
 } catch (error) {
   console.error('Error parsing Firebase service account:', error);
   process.exit(1);
@@ -57,9 +52,9 @@ app.use(express.json());
 // IMPORTANT: Create a GitLab application in your GitLab settings > Applications.
 // - Scopes: select `api`, `read_user`, `read_repository`.
 // - Redirect URI: Must match this server's callback URL (e.g., http://localhost:3000/auth/gitlab/callback)
-const GITLAB_CLIENT_ID = "714ce09dcc4ced803f1d30e8005e3843cfc1351a7d0e73e20440151dbdb85d4a";
-const GITLAB_CLIENT_SECRET = "gloas-977a6922ef7b3321db2b7eca54fe0814ba6aa4597ca6ae043d7e9ba4980bcad5";
-const REDIRECT_URI = process.env.GITLAB_CALLBACK_URL || 'http://localhost:3000/auth/gitlab/callback';
+const GITLAB_CLIENT_ID = "3254a2395a184cd634d6d1864fb3e61e64b48aee13f372aa2ef8feb727f5831c";
+const GITLAB_CLIENT_SECRET = "gloas-c9f3dcef1d3ceb4e343acc9880f94ce07c120a76f27c295d3bc052afef15c5de";
+const REDIRECT_URI = 'https://servertmigitlab.onrender.com/auth/gitlab/callback';
 const GITLAB_BASE_URL = 'https://gitlab.com';
 const FALLBACK_FRONTEND_URL = 'https://tmiisikefeya.vercel.app';
 
@@ -68,19 +63,15 @@ const FALLBACK_FRONTEND_URL = 'https://tmiisikefeya.vercel.app';
 /**
  * Route to initiate the GitLab OAuth flow.
  * The frontend redirects the user here.
- * Expects a `userId` query parameter.
+ * userId is no longer needed as credentials are now global.
  */
 app.get('/auth/gitlab', (req, res) => {
-  const { userId } = req.query;
-  if (!userId) {
-    return res.status(400).send('User ID is required.');
-  }
-
   // Use Referer header to get the frontend URL, with a fallback.
   const referer = req.headers.referer || FALLBACK_FRONTEND_URL;
   const frontendUrl = new URL(referer).origin;
 
-  const state = Buffer.from(JSON.stringify({ userId, frontendUrl })).toString('base64');
+  // The state now only needs to contain the frontend URL to redirect back to.
+  const state = Buffer.from(JSON.stringify({ frontendUrl })).toString('base64');
 
   const authUrl = new URL(`${GITLAB_BASE_URL}/oauth/authorize`);
   authUrl.searchParams.append('client_id', GITLAB_CLIENT_ID);
@@ -99,7 +90,6 @@ app.get('/auth/gitlab/callback', async (req, res) => {
   const { code, state } = req.query;
 
   let frontendUrl = FALLBACK_FRONTEND_URL;
-  let userId;
 
   if (!code || !state) {
     return res.status(400).redirect(`${frontendUrl}/#/gitlab?status=error&message=InvalidCallback`);
@@ -107,12 +97,7 @@ app.get('/auth/gitlab/callback', async (req, res) => {
 
   try {
     const decodedState = JSON.parse(Buffer.from(state, 'base64').toString('ascii'));
-    userId = decodedState.userId;
     frontendUrl = decodedState.frontendUrl || frontendUrl;
-
-    if (!userId) {
-      throw new Error('User ID missing from state');
-    }
 
     // Exchange the authorization code for an access token
     const tokenResponse = await axios.post(`${GITLAB_BASE_URL}/oauth/token`, null, {
@@ -128,14 +113,12 @@ app.get('/auth/gitlab/callback', async (req, res) => {
     const { access_token, refresh_token, expires_in } = tokenResponse.data;
     const expiresAt = Date.now() + expires_in * 1000;
 
-    // Store the tokens securely in the user's Firestore document
-    const userDocRef = db.collection('members').doc(userId);
-    await userDocRef.update({
-      gitlab: {
-        accessToken: access_token, // In a real app, encrypt this token
-        refreshToken: refresh_token, // And this one
-        expiresAt,
-      },
+    // Store the tokens in a dedicated global document
+    const integrationDocRef = db.collection('integrations').doc('gitlab');
+    await integrationDocRef.set({
+      accessToken: access_token,
+      refreshToken: refresh_token,
+      expiresAt,
     });
 
     // Redirect the user back to the frontend application
@@ -148,20 +131,14 @@ app.get('/auth/gitlab/callback', async (req, res) => {
 });
 
 /**
- * Route to disconnect a user's GitLab account.
+ * Route to disconnect the global GitLab account.
  */
 app.post('/auth/gitlab/disconnect', async (req, res) => {
-    const { userId } = req.body;
-    if (!userId) {
-        return res.status(400).json({ error: 'User ID is required.' });
-    }
-
+    // No userId is needed as this is a global action.
     try {
-        const userDocRef = db.collection('members').doc(userId);
-        // Use Firestore's `FieldValue.delete()` to remove the 'gitlab' field
-        await userDocRef.update({
-            gitlab: admin.firestore.FieldValue.delete(),
-        });
+        const integrationDocRef = db.collection('integrations').doc('gitlab');
+        // Delete the document to remove all credentials.
+        await integrationDocRef.delete();
         res.status(200).json({ message: 'Successfully disconnected GitLab account.' });
     } catch (error) {
         console.error('Error disconnecting GitLab account:', error);
